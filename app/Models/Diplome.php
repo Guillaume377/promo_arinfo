@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Diplome extends Model
 {
     use HasFactory;
+
+    public function formateur(){
+
+        return $this->belongsTo(Formateur::class);
+    }
+
+    public function promos(){
+
+        return $this->hasMany(Promo::class);
+    }
 }
