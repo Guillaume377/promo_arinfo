@@ -16,3 +16,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+// **************** route diplomes ************* //
+Route::resource('/index', \App\Http\Controllers\DiplomeController::class);
+
+
+// **************** route formateurs ************* //
+Route::resource('/index', \App\Http\Controllers\FormateurController::class);
+
+
+// **************** route élèves ************* //
+Route::resource('/index', \App\Http\Controllers\EleveController::class)->except('create');
+
+
+// **************** route promos ************* //
+Route::resource('/index', \App\Http\Controllers\PromoController::class)->except('create');
